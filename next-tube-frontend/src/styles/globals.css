@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  overflow-x: hidden;
+  margin-bottom: 4rem;
+}
+
+html.dark {
+  background-color: #0f0f0f;
+  color: #f1f1f1;
+}
+
+video {
+  width: 100%;
+  max-height: var(--max-player-height);
+  margin: auto;
+}
+
+video[poster] {
+  height: 100%;
+  width: 100%;
+}
+
+media-player[data-fullscreen] video {
+  width: auto;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.form-tooltip:after {
+  content: "";
+  position:absolute;
+  
+  /* position tooltip correctly */
+  left: 6px;
+ 
+  /* vertically center */
+  bottom: 0;
+  transform: translateY(100%);
+ 
+  /* the arrow */
+  border: 6px solid;
+  border-color: rgb(96, 96, 96, 0.9) transparent transparent transparent;
+}
+
+.shimmer {
+  position: relative; 
+  background: #3a3a3a;
+  background-image: linear-gradient(to right, #3a3a3a 0%, #3f3f3f 10%, #4a4a4a 20%, #3f3f3f 30%, #3a3a3a 50%, #3a3a3a 100%);
+  background-repeat: no-repeat;
+  background-size: 800px 200px; 
+  
+  /* Animantion */
+  animation-duration: 1.5s;
+  
+  /* Specifies style for element when animation isn't playing */
+  animation-fill-mode: forwards;
+  
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0; 
+  }
+}

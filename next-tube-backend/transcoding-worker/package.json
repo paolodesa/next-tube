@@ -1,0 +1,23 @@
+{
+  "name": "transcoding-worker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc && node .",
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.18.0",
+    "bullmq": "^3.10.4"
+  }
+}
